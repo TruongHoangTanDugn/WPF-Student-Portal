@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 C:\Users\HP\source\repos\WPF_Student_Portal\WPF_Student_Portal\App.xaml
 51427294101
 
-17556781165
+19-127433319
 227487914677
 MainWindow.xaml;Views\Home\HomePage.xaml;Views\Onboarding\LandingPage.xaml;Views\Onboarding\LoginPage.xaml;Views\Onboarding\RegisterPage.xaml;
 
-True
+False
 
