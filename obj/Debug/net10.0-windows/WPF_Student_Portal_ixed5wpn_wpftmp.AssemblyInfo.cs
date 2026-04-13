@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_Student_Portal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9e201bd900ae86bb6cb33470363f696d67ee056")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93e7ba8da2575a27dc0c5c14a7131ea4d6a9efdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_Student_Portal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_Student_Portal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

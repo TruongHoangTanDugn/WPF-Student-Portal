@@ -27,6 +27,7 @@ namespace WPF_Student_Portal.Views.Onboarding
             var dialogService = new WpfDialogService();
 
             _viewModel = new LandingPageViewModel(navigationService, dialogService);
+            DataContext = _viewModel;
         }
     }
 }

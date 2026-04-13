@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Student_Portal.Services.Implements;
+using WPF_Student_Portal.ViewModels.Onboarding;
 
 namespace WPF_Student_Portal.Views.Onboarding
 {
@@ -18,9 +20,15 @@ namespace WPF_Student_Portal.Views.Onboarding
     /// </summary>
     public partial class LoginPage : Page
     {
+        private readonly LoginPageViewModel _viewModel = null!;
         public LoginPage()
         {
             InitializeComponent();
+            var navigationService = new WpfNavigationService(this);
+            var dialogService = new WpfDialogService();
+
+            _viewModel = new LoginPageViewModel(navigationService, dialogService);
+            DataContext = _viewModel;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

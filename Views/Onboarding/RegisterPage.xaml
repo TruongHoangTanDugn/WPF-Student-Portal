@@ -9,32 +9,155 @@
       Title="RegisterPage"
       Background="White">
 
-    <Grid>
-        <Border Background="#F5F5F5" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20">
-            <StackPanel Orientation="Vertical">
-                <Border HorizontalAlignment="Left">
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="New student form" FontWeight="Bold" FontFamily="Inter" FontSize="20" Height="Auto"></TextBlock>
-                        <TextBlock Text="Fill in the fields to enroll a new student." FontWeight="Light" FontSize="10" Foreground="#605F5F"></TextBlock>
+    <Grid Background="#F5F5F5">
+        <Border HorizontalAlignment="Center" Padding="0" VerticalAlignment="Center" Background="#F5F5F5">
+
+            <StackPanel Orientation="Vertical" Width="Auto" Height="Auto" HorizontalAlignment="Left">
+                <StackPanel>
+                    <!--Title-->
+                    <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Left" Margin="0,0,0,10">
+                        <TextBlock Width="179" Height="24" HorizontalAlignment="Left"
+                                    Text="New student Form" FontFamily="Inter" Foreground="#000000" FontSize="20" FontWeight="Bold"/>
+                        <TextBlock Width="Auto" Height="Auto" HorizontalAlignment="Left"
+                                    Text="Fill in the fields to enroll a new student." Foreground="#605F5F" FontSize="12"/>
                     </StackPanel>
-                </Border>
 
-                <GroupBox BorderBrush="#D3D3D3" HorizontalAlignment="Stretch" BorderThickness="1" Margin="20">
-                    <GroupBox.Header>
-                        <TextBlock Text="Personal information" 
-                                   FontFamily="Inter"
-                                   FontStyle="Normal"
-                                   FontSize="12"
-                                   Height="Auto"
-                                   FontWeight="Normal" 
-                                   HorizontalAlignment="Left"
-                                   Foreground="#333333" 
-                                   Padding="5,0"/>
-                    </GroupBox.Header>
+                    <!--Register section-->
+                    <StackPanel>
+                        <!--Personal information-->
+                        <GroupBox Style="{StaticResource RoundedGroupBox}"
+                                  Header="Personal information"
+                                  HorizontalAlignment="Stretch"
+                                  Height="Auto"
+                                  Margin="0,10,0,10">
+                            <StackPanel Orientation="Vertical">
+                                <!--Name-->
+                                <Grid Margin="0,5,0,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--First name-->
+                                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                                        <TextBlock Text="First name"/>
+                                        <Border BorderThickness="0.5" CornerRadius="5" 
+                                                BorderBrush="#9A9A9A" Margin="0,0,10,0">
+                                            <TextBox BorderThickness="0" Background="Transparent" 
+                                                     Height="21" Width="Auto"
+                                                     Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <!--Last name-->
+                                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                                        <TextBlock Text="Last name"/>
+                                        <Border BorderThickness="0.5" CornerRadius="5" BorderBrush="#9A9A9A">
+                                            <TextBox BorderThickness="0" Background="Transparent" 
+                                                     Height="21" Width="Auto"
+                                                     Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
 
-                    <Grid>
-                    </Grid>
-                </GroupBox>
+                                <!--Email-->
+                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                    <TextBlock Text="Contact email"/>
+                                    <Border BorderThickness="0.5" CornerRadius="5" BorderBrush="#9A9A9A">
+                                        <TextBox BorderThickness="0" Background="Transparent" 
+                                                 Height="21" Width="Auto"
+                                                 Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Border>
+                                </StackPanel>
+
+                                <!--Gender-->
+                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                    <TextBlock Text="Gender"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,3,0">
+                                            <RadioButton BorderBrush="#000000" BorderThickness="0.5" 
+                                                         VerticalAlignment="Center"/>
+                                            <TextBlock Text="Male" Height="Auto" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                            <RadioButton BorderBrush="#000000" BorderThickness="0.5" 
+                                                         VerticalAlignment="Center"/>
+                                            <TextBlock Text="Female" Height="Auto" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                            <RadioButton BorderBrush="#000000" BorderThickness="0.5" 
+                                                         VerticalAlignment="Center"/>
+                                            <TextBlock Text="Other" Height="Auto" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <!--Academic Details-->
+                        <GroupBox Style="{StaticResource RoundedGroupBox}"
+                                  Header="Academic Details"
+                                  Margin="0,10,0,10">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Major"/>
+                                <Border BorderThickness="0.5" CornerRadius="6" BorderBrush="#9A9A9A" Padding="4" Margin="0,6,0,0">
+                                    <!-- bind ItemsSource to a viewmodel collection (see notes) -->
+                                    <ComboBox BorderThickness="0"
+                                                Background="Transparent"
+                                                MinWidth="300"
+                                                Height="12"
+                                                FontSize="12"
+                                                Padding="10,0"
+                                                ItemsSource="{Binding Majors}"
+                                                SelectedItem="{Binding SelectedMajor, Mode=TwoWay}" />
+                                </Border>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <!--Login Credentials-->
+                        <GroupBox Style="{StaticResource RoundedGroupBox}"
+                                  Header="Login Credentials"
+                                  HorizontalAlignment="Stretch"
+                                  Height="Auto"
+                                  Margin="0,10,0,10">
+                            <StackPanel Orientation="Vertical">
+                                <!--UserName-->
+                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                    <TextBlock Text="Username"/>
+                                    <Border BorderThickness="0.5" CornerRadius="5" BorderBrush="#9A9A9A">
+                                        <TextBox BorderThickness="0" Background="Transparent" 
+                                                 Height="21" Width="Auto"
+                                                 Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Border>
+                                </StackPanel>
+
+                                <!--Password-->
+                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                    <TextBlock Text="Password"/>
+                                    <Border BorderThickness="0.5" CornerRadius="5" BorderBrush="#9A9A9A">
+                                        <PasswordBox BorderThickness="0" Background="Transparent" 
+                                                     Height="21" Width="Auto"/>
+                                    </Border>
+                                </StackPanel>
+
+                                <!--ConfirmedPassword-->
+                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                    <TextBlock Text="Comfirmed Password"/>
+                                    <Border BorderThickness="0.5" CornerRadius="5" BorderBrush="#9A9A9A">
+                                        <PasswordBox BorderThickness="0" Background="Transparent" 
+                                                 Height="21" Width="Auto"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <!--Buttons-->
+                        <Border Height="Auto" HorizontalAlignment="Stretch" Margin="15">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Content="Clear" Background="#D4EFFD" Margin="0,0,10,0"/>
+                                <Button Content="Register" Background="#1FA8F2" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>

@@ -21,7 +21,12 @@ namespace WPF_Student_Portal.ViewModels.Onboarding
         [RelayCommand]
         public void Login()
         {
-            _navigationService.NavigateTo("LoginPage");
+            _navigationService.NavigateToLoginPage();
+        }
+
+        public void Register()
+        {
+            _navigationService.NavigateToRegisterPage();
         }
     }
 }

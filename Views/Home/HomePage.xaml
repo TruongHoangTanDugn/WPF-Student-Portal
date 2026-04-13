@@ -34,6 +34,7 @@
                         </Border>
                     </StackPanel>
                 </Border>
+                <!--C:\Users\HP\source\repos\WPF_Student_Portal\WPF_Student_Portal.slnx-->
 
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#000000" HorizontalAlignment="Left" Background="#FFFFFF" Width="732" Height="Auto">
                     <DataGrid AutoGenerateColumns="False" 
