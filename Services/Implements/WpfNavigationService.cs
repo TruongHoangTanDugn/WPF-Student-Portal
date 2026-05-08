@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using WPF_Student_Portal.Views.Onboarding;
+using WPF_Student_Portal.Views.Home;
 
 namespace WPF_Student_Portal.Services.Implements
 {

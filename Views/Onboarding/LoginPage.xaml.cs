@@ -30,10 +30,5 @@ namespace WPF_Student_Portal.Views.Onboarding
             _viewModel = new LoginPageViewModel(navigationService, dialogService);
             DataContext = _viewModel;
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
